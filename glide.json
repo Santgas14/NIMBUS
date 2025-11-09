@@ -1,0 +1,13 @@
+{
+  "name": "Hora Servidor São Paulo",
+  "description": "Retorna a data e hora atual do servidor (fuso horário de São Paulo)",
+  "parameters": [
+    {
+      "name": "dummy",
+      "type": "primitive"
+    }
+  ],
+  "result": {
+    "type": "date-time"
+  }
+}
