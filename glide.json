@@ -1,8 +1,28 @@
-{
-  "name": "Hora de Brasília",
-  "description": "Retorna a data e hora atual do servidor no horário de Brasília",
-  "parameters": [],
-  "result": {
-    "type": "string"
+[
+  {
+    "kind": "column",
+    "name": "Substring",
+    "description": "Extracts a substring out of a string. Both start and end indexes are optional. The end index is exclusive.",
+    "author": "Mark Probst <mark@glideapps.com>",
+    "params": [
+      {
+        "name": "string",
+        "displayName": "String",
+        "type": "string"
+      },
+      {
+        "name": "start",
+        "displayName": "Start index",
+        "type": "number"
+      },
+      {
+        "name": "end",
+        "displayName": "End index",
+        "type": "number"
+      }
+    ],
+    "result": {
+      "type": "string"
+    }
   }
-}
+]
