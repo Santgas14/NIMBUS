@@ -1,17 +1,13 @@
-window.function = function(dummy) {
-  try {
-    // Cria objeto Date no fuso de São Paulo
-    var date = new Date();
+window.function = function () {
+    var now = new Date();
 
-    // Formata para ISO 8601 (YYYY-MM-DDTHH:mm:ss±hh:mm)
-    // Ajuste para fuso horário de São Paulo (-3h)
-    var offsetMs = -3 * 60 * 60 * 1000;
-    var localDate = new Date(date.getTime() + offsetMs);
-    var isoString = localDate.toISOString().slice(0, 19) + "-03:00";
+    // Horário de Brasília (GMT-3)
+    var offset = -3;
+    var utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    var brasiliaTime = new Date(utc + (3600000 * offset));
 
-    return isoString; // Glide entende formato ISO
-  } catch (e) {
-    console.error("Erro ao gerar data/hora:", e);
-    return undefined;
-  }
-};
+    // Formato YYYY-MM-DD HH:MM:SS
+    var dateString = brasiliaTime.toISOString().replace('T', ' ').substring(0, 19);
+
+    return dateString;
+}
